@@ -1,0 +1,15 @@
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+.page{
+    margin: 0;
+    height: 100vh;
+    width: auto;
+}
+.page__header{
+    width: 100%;
+    border: 1px solid red;
+}

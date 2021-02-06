@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/daccc3f8b9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="design/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+</head>
+
+<body class="page">
+  <header class="page__header">
+    <img src="images/bg-desktop-light.jpg" width="100%" alt="">
+    <!-- <img src="images/bg-desktop-dark.jpg" alt=""> -->
+    <h1 class="page__title">Todo</h1>
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+  </header>
+  <input type="text" class="page__input" placeholder="Write something...">
+  <main class="todo_list page__main">
+    <ul class="todo_list__tasks">
+      <li id='test2'>
+        <button class="complete"><i class="fas fa-check"></i></button>
+          Zjeść śniadanie        
+        <button class="delete"><i class="fas fa-times"></i></button>
+      </li>
+      <li id='test2'>
+        <button class="complete"><i class="fas fa-check"></i></button>
+          Umyć okna        
+        <button class="delete"><i class="fas fa-times"></i></button>
+      </li>
+    </ul>
+    <div class="todo_list__footer">
+      <span>5 items left</span>
+      <div class="todo_list__status">
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
+      <button>Clear Completed</button>
+    </div>
+  </main>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
