@@ -5,43 +5,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/daccc3f8b9.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="design/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light-style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Todo app</title>
 </head>
 
 <body class="page">
   <header class="page__header">
-    <img src="images/bg-desktop-light.jpg" width="100%" alt="">
-    <!-- <img src="images/bg-desktop-dark.jpg" alt=""> -->
     <h1 class="page__title">Todo</h1>
-    <i class="fas fa-sun"></i>
+    <i class="fas fa-sun hide"></i>
     <i class="fas fa-moon"></i>
+    <div class="page__input-container">
+      <div class="checkbox"></div>
+      <input type="text" class="page__input" placeholder="Create a new todo...">
+    </div>
   </header>
-  <input type="text" class="page__input" placeholder="Write something...">
   <main class="todo_list page__main">
     <ul class="todo_list__tasks">
-      <li id='test2'>
-        <button class="complete"><i class="fas fa-check"></i></button>
-          Zjeść śniadanie        
-        <button class="delete"><i class="fas fa-times"></i></button>
+      <li class='todo_list__item'>
+        <div class="todo_list__check todo_list__check--complete"></div>
+        <span class="todo_list__task todo_list__task--completed">Zjeść śniadanie</span>        
+        <img class="todo_list__delete" src="images/icon-cross.svg" alt="">
       </li>
-      <li id='test2'>
-        <button class="complete"><i class="fas fa-check"></i></button>
-          Umyć okna        
-        <button class="delete"><i class="fas fa-times"></i></button>
+      <li class='todo_list__item'>
+        <div class="todo_list__check"></div>
+        <span class="todo_list__task">Umyć okna</span>        
+        <img class="todo_list__delete" src="images/icon-cross.svg" alt="">
+      </li>
+      <li class='todo_list__item'>
+        <div class="todo_list__check todo_list__check--complete"></div>
+        <span class="todo_list__task todo_list__task--completed">Wypić herbatę</span>        
+        <img class="todo_list__delete" src="images/icon-cross.svg" alt="">
+      </li>
+      <li class='todo_list__item'>
+        <div class="todo_list__check"></div>
+        <span class="todo_list__task">Zjeść obiad</span>        
+        <img class="todo_list__delete" src="images/icon-cross.svg" alt="">
+      </li>
+      <li class='todo_list__item'>
+        <div class="todo_list__check"></div>
+        <span class="todo_list__task">Zjeść kolację</span>        
+        <img class="todo_list__delete" src="images/icon-cross.svg" alt="">
       </li>
     </ul>
     <div class="todo_list__footer">
-      <span>5 items left</span>
-      <div class="todo_list__status">
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+      <span class="todo_list__incompleted"></span>
+      <div class="todo_list__status todo_list__status--desktop">
+        <button class="todo_list__button">All</button>
+        <button class="todo_list__button">Active</button>
+        <button class="todo_list__button">Completed</button>
       </div>
-      <button>Clear Completed</button>
+      <span class="todo_list__cls-completed">Clear Completed</span>
     </div>
   </main>
+  <div class="todo_list__status todo_list__status--mobile">
+    <button class="todo_list__button">All</button>
+    <button class="todo_list__button">Active</button>
+    <button class="todo_list__button">Completed</button>
+  </div>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
