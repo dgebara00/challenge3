@@ -6,9 +6,12 @@ let $cross;
 let $incompletedAmount;
 let $input;
 let $cls;
-let $onlyCompletedBtn;
-let $onlyActiveBtn;
-let $allTasksBtn;
+let $onlyCompletedBtnDesktop;
+let $onlyActiveBtnDesktop;
+let $allTasksBtnDesktop;
+let $onlyCompletedBtnMobile;
+let $onlyActiveBtnMobile;
+let $allTasksBtnMobile;
 
 const main = () => {
     prepareDOMElements();
@@ -24,9 +27,12 @@ const prepareDOMElements = () => {
     $incompletedAmount = document.querySelector('.todo_list__incompleted');
     $input = document.querySelector('.page__input');
     $cls = document.querySelector('.todo_list__cls-completed');
-    $onlyCompletedBtn = document.querySelectorAll('.todo_list__button')[5];
-    $onlyActiveBtn = document.querySelectorAll('.todo_list__button')[4];
-    $allTasksBtn = document.querySelectorAll('.todo_list__button')[3];
+    $onlyCompletedBtnDesktop = document.querySelectorAll('.todo_list__button--completed')[0];
+    $onlyCompletedBtnMobile = document.querySelectorAll('.todo_list__button--completed')[1];
+    $onlyActiveBtnDesktop = document.querySelectorAll('.todo_list__button--remained')[0];
+    $onlyActiveBtnMobile = document.querySelectorAll('.todo_list__button--remained')[1];
+    $allTasksBtnDesktop = document.querySelectorAll('.todo_list__button--all')[0];
+    $allTasksBtnMobile = document.querySelectorAll('.todo_list__button--all')[1];
 };
 const prepareDOMEvents = () => {
     $moonBtn.addEventListener('click', darkMode);
@@ -34,9 +40,12 @@ const prepareDOMEvents = () => {
     $ulList.addEventListener('click', modify);
     $input.addEventListener('keydown', newTask);
     $cls.addEventListener('click', removeAll);
-    $onlyCompletedBtn.addEventListener('click', allCompleted);
-    $onlyActiveBtn.addEventListener('click', allActive);
-    $allTasksBtn.addEventListener('click', everyTask);
+    $onlyCompletedBtnDesktop.addEventListener('click', allCompletedDesktop);
+    $onlyCompletedBtnMobile.addEventListener('click',  allCompletedMobile);
+    $onlyActiveBtnDesktop.addEventListener('click', allActiveDesktop);
+    $onlyActiveBtnMobile.addEventListener('click',  allActiveMobile);
+    $allTasksBtnDesktop.addEventListener('click', everyTaskDesktop);
+    $allTasksBtnMobile.addEventListener('click',  everyTaskMobile);
 };
 const darkMode = () => {
     $selectCSS.setAttribute("href", "css/dark-style.css");
@@ -104,10 +113,12 @@ const count = () => {
        $incompletedAmount.innerHTML = `${summary} items left.`;
    }
 };
-const allCompleted = () => {
-    $onlyCompletedBtn.classList.add('todo_list__button--active');
-    $allTasksBtn.classList.remove('todo_list__button--active');
-    $onlyActiveBtn.classList.remove('todo_list__button--active');
+
+            // ******desktop status buttons*******
+const allCompletedDesktop = () => {
+    $onlyCompletedBtnDesktop.classList.add('todo_list__button--active');
+    $allTasksBtnDesktop.classList.remove('todo_list__button--active');
+    $onlyActiveBtnDesktop.classList.remove('todo_list__button--active');
     let allTasks = document.querySelectorAll('.todo_list__task');
     for(let i=0; i<allTasks.length; i++){
         if(allTasks[i].classList.contains("todo_list__task--completed")){
@@ -118,10 +129,10 @@ const allCompleted = () => {
         }
     }
 };
-const allActive = () => {
-    $allTasksBtn.classList.remove('todo_list__button--active');
-    $onlyCompletedBtn.classList.remove('todo_list__button--active');
-    $onlyActiveBtn.classList.add('todo_list__button--active');
+const allActiveDesktop = () => {
+    $allTasksBtnDesktop.classList.remove('todo_list__button--active');
+    $onlyCompletedBtnDesktop.classList.remove('todo_list__button--active');
+    $onlyActiveBtnDesktop.classList.add('todo_list__button--active');
     let allTasks = document.querySelectorAll('.todo_list__task');
     for(let i=0; i<allTasks.length; i++){
         if(allTasks[i].classList.contains("todo_list__task--completed")){
@@ -132,10 +143,50 @@ const allActive = () => {
         }
     }
 };
-const everyTask = () => {
-    $allTasksBtn.classList.add('todo_list__button--active');
-    $onlyCompletedBtn.classList.remove('todo_list__button--active');
-    $onlyActiveBtn.classList.remove('todo_list__button--active');
+const everyTaskDesktop = () => {
+    $allTasksBtnDesktop.classList.add('todo_list__button--active');
+    $onlyCompletedBtnDesktop.classList.remove('todo_list__button--active');
+    $onlyActiveBtnDesktop.classList.remove('todo_list__button--active');
+    let allTasks = document.querySelectorAll('.todo_list__task');
+    for(let i=0; i<allTasks.length; i++){
+        allTasks[i].closest('li').style.display = "flex";
+    }
+}
+
+                // ******mobile status buttons*******
+
+const allCompletedMobile = () => {
+    $onlyCompletedBtnMobile.classList.add('todo_list__button--active');
+    $allTasksBtnMobile.classList.remove('todo_list__button--active');
+    $onlyActiveBtnMobile.classList.remove('todo_list__button--active');
+    let allTasks = document.querySelectorAll('.todo_list__task');
+    for(let i=0; i<allTasks.length; i++){
+        if(allTasks[i].classList.contains("todo_list__task--completed")){
+            allTasks[i].closest('li').style.display = "flex";
+        }
+        else{
+            allTasks[i].closest('li').style.display = "none";
+        }
+    }
+};
+const allActiveMobile = () => {
+    $allTasksBtnMobile.classList.remove('todo_list__button--active');
+    $onlyCompletedBtnMobile.classList.remove('todo_list__button--active');
+    $onlyActiveBtnMobile.classList.add('todo_list__button--active');
+    let allTasks = document.querySelectorAll('.todo_list__task');
+    for(let i=0; i<allTasks.length; i++){
+        if(allTasks[i].classList.contains("todo_list__task--completed")){
+            allTasks[i].closest('li').style.display = "none";
+        }
+        else{
+            allTasks[i].closest('li').style.display = "flex";
+        }
+    }
+};
+const everyTaskMobile = () => {
+    $allTasksBtnMobile.classList.add('todo_list__button--active');
+    $onlyCompletedBtnMobile.classList.remove('todo_list__button--active');
+    $onlyActiveBtnMobile.classList.remove('todo_list__button--active');
     let allTasks = document.querySelectorAll('.todo_list__task');
     for(let i=0; i<allTasks.length; i++){
         allTasks[i].closest('li').style.display = "flex";

@@ -19,14 +19,11 @@
     background-color: hsl(235, 24%, 19%);
 }
 .todo_list__button--active{
-    color: hsl(220, 98%, 61%) !important; /* do zrobienia */
+    color: hsl(220, 98%, 61%);
     opacity: 1;
 }
 .todo_list__task{
     color: hsl(0, 0%, 100%);
-}
-.todo_list__button{
-    color: hsl(234, 11%, 52%);
 }
 .todo_list__footer{
     background-color: hsl(235, 24%, 19%);

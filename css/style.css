@@ -14,7 +14,6 @@ html{
     justify-items: center;
     align-content: start;
     grid-gap: 1rem;
-    overflow: hidden;
 }
 .page__header{
     display: grid;
@@ -35,7 +34,7 @@ html{
     grid-column: span 2;
     height: 3rem;
     border: 1px hsl(0, 0%, 98%);
-    font-size: .6rem;
+    font-size: clamp(.6rem, 1.5vw, 1rem);;
     border-radius: .25rem;
     flex: 1;
     outline: 0;
@@ -63,6 +62,7 @@ html{
 }
 .fas{
     color: hsl(0, 0%, 98%);
+    cursor: pointer;
 }
 .todo_list__tasks{
     margin: 0;
@@ -85,6 +85,10 @@ html{
     border: 1px solid hsl(231, 10%, 25%);
     border-radius: 50%;
     margin: 0 .75rem;
+    cursor: pointer;
+}
+.todo_list__check:hover, .checkbox:hover{
+    border: 1px solid hsl(220, 98%, 61%);
 }
 .todo_list__check--complete{
     background: url("../images/icon-check.svg"), linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -95,21 +99,22 @@ html{
 .todo_list__footer{
     display: flex;
     justify-content: space-between;
-    font-size: .6rem;
+    font-size: clamp(.6rem, 1.5vw, .8rem);
     align-content: center;
     padding: 1rem;
 }
 .todo_list__incompleted{
     color: hsl(234, 11%, 52%);
-    font-size: .5rem;
+    font-size: clamp(.5rem, 1.5vw, .7rem);
 }
 .todo_list__cls-completed{
     color: hsl(234, 11%, 52%);
-    font-size: .5rem;
+    font-size: clamp(.5rem, 1.5vw, .7rem);
     cursor: pointer;
 }
 .todo_list__status--desktop{
     display: none;
+    gap: .5rem;
 }
 .todo_list__status--mobile{
     display: flex;
@@ -126,25 +131,33 @@ html{
     padding: 0;
     border: 0;
     background-color: unset;
-    font-size: .6rem;
+    font-size: clamp(.65rem, 1.5vw, .8rem);
     outline: 0;
     font-weight: 700;
+    color: hsl(234, 11%, 52%);
+    cursor: pointer;
 }
 .todo_list__delete{
     border: 0;
     background-color: unset;
+    opacity: 0;
     width: .75rem;
+    transition: opacity .2s ease-in-out;
+}
+.todo_list__delete:hover{
+    opacity: 1;
 }
 .todo_list__task{
     flex: 1;   
-    font-size: .5rem;
-    opacity: .5;
-    font-weight: 700;
+    font-size: clamp(.6rem, 1.5vw, 1rem);
+    opacity: .7;
+    font-weight: 300;
+    cursor: pointer;
 }
 .todo_list__task--completed{
     text-decoration: line-through;
-    opacity: .5;
-    font-size: .5rem;
+    opacity: .3;
+    font-size: clamp(.6rem, 1.5vw, 1rem);
 }
 .todo_list__button--active{
     color: hsl(220, 98%, 61%);
@@ -152,4 +165,13 @@ html{
 }
 .hide{
     display: none;
+}
+
+@media only screen and (min-width: 400px){
+    .todo_list__status--mobile{
+        display: none;
+    }
+    .todo_list__status--desktop{
+        display: flex;
+    }
 }

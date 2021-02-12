@@ -5,6 +5,11 @@
 .page__input{
     opacity: .8;
     color: hsl(234, 11%, 52%);
+    background-color: white;
+    opacity: 1;
+}
+.page__input::placeholder{
+    opacity: .6;
 }
 .page__input-container{
     background-color: white;
@@ -19,6 +24,9 @@
     opacity: .6;
 }
 .todo_list__delete{
+    opacity: 0;
+}
+.todo_list__delete:hover{
     opacity: .6;
 }
 .checkbox{
@@ -33,6 +41,11 @@
 .todo_list__status--mobile{
     background-color: hsl(0, 0%, 98%);
 }
+.todo_list__button--active{
+    color: hsl(220, 98%, 61%);
+    opacity: 1;
+}
+
 @media only screen and (min-width: 376px) and (max-width: 429px){
     .page{
         background-image: url("../images/bg-mobile-light.jpg");
