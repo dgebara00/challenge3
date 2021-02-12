@@ -27,12 +27,12 @@ const prepareDOMElements = () => {
     $incompletedAmount = document.querySelector('.todo_list__incompleted');
     $input = document.querySelector('.page__input');
     $cls = document.querySelector('.todo_list__cls-completed');
-    $onlyCompletedBtnDesktop = document.querySelectorAll('.todo_list__button--completed')[0];
-    $onlyCompletedBtnMobile = document.querySelectorAll('.todo_list__button--completed')[1];
-    $onlyActiveBtnDesktop = document.querySelectorAll('.todo_list__button--remained')[0];
-    $onlyActiveBtnMobile = document.querySelectorAll('.todo_list__button--remained')[1];
-    $allTasksBtnDesktop = document.querySelectorAll('.todo_list__button--all')[0];
-    $allTasksBtnMobile = document.querySelectorAll('.todo_list__button--all')[1];
+    $onlyCompletedBtnDesktop = document.querySelector('.todo_list__button--completedDesktop');
+    $onlyCompletedBtnMobile = document.querySelector('.todo_list__button--completedMobile');
+    $onlyActiveBtnDesktop = document.querySelector('.todo_list__button--remainedDesktop');
+    $onlyActiveBtnMobile = document.querySelector('.todo_list__button--remainedMobile');
+    $allTasksBtnDesktop = document.querySelector('.todo_list__button--allDesktop');
+    $allTasksBtnMobile = document.querySelector('.todo_list__button--allMobile');
 };
 const prepareDOMEvents = () => {
     $moonBtn.addEventListener('click', darkMode);
