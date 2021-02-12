@@ -1,0 +1,50 @@
+.page{
+    background-image: url("../images/bg-mobile-dark.jpg");
+    background-color: hsl(235, 21%, 11%);
+}
+.page__input-container{
+    background-color: hsl(235, 24%, 19%);
+}
+.page__input{
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 11%, 52%);
+}
+.page__input::placeholder{
+    color: hsl(234, 11%, 52%);
+}
+.todo_list{
+    background-color: hsl(235, 24%, 19%);
+}
+.todo_list__status--mobile{
+    background-color: hsl(235, 24%, 19%);
+}
+.todo_list__button--active{
+    color: hsl(220, 98%, 61%) !important; /* do zrobienia */
+    opacity: 1;
+}
+.todo_list__task{
+    color: hsl(0, 0%, 100%);
+}
+.todo_list__button{
+    color: hsl(234, 11%, 52%);
+}
+.todo_list__footer{
+    background-color: hsl(235, 24%, 19%);
+}
+@media only screen and (min-width: 376px) and (max-width: 429px){
+    .page{
+        background-image: url("../images/bg-mobile-dark.jpg");
+        background-size: 100%;
+    }
+}
+@media only screen and (min-width: 430px) and (max-width:1440px){
+    .page{
+        background-image: url("../images/bg-desktop-dark.jpg");
+    }
+}
+@media only screen and (min-width:1441px){
+    .page{
+        background-image: url("../images/bg-desktop-dark.jpg");
+        background-size: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+.page{
+    background-image: url("../images/bg-mobile-light.jpg");
+    background-color: hsl(236, 33%, 92%);
+}
+.page__input{
+    opacity: .8;
+    color: hsl(234, 11%, 52%);
+}
+.page__input-container{
+    background-color: white;
+}
+.todo_list{
+    background-color: hsl(0, 0%, 98%);
+}
+.todo_list__incompleted{
+    opacity: .6;
+}
+.todo_list__cls-completed{
+    opacity: .6;
+}
+.todo_list__delete{
+    opacity: .6;
+}
+.checkbox{
+    border: 1px solid hsl(240, 4%, 87%);
+}
+.todo_list__check{
+    border: 1px solid hsl(240, 4%, 87%);
+}
+.todo_list__button{
+    opacity: .5;
+}
+.todo_list__status--mobile{
+    background-color: hsl(0, 0%, 98%);
+}
+@media only screen and (min-width: 376px) and (max-width: 429px){
+    .page{
+        background-image: url("../images/bg-mobile-light.jpg");
+        background-size: 100%;
+    }
+}
+@media only screen and (min-width: 430px) and (max-width:1440px){
+    .page{
+        background-image: url("../images/bg-desktop-light.jpg");
+    }
+}
+@media only screen and (min-width:1441px){
+    .page{
+        background-image: url("../images/bg-desktop-light.jpg");
+        background-size: 100%;
+    }
+}
